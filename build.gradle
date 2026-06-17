@@ -9,7 +9,7 @@ base {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(15)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
 neoForge {
