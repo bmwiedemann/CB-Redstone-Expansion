@@ -1,6 +1,6 @@
 package Comet_Blaze.neo.cbadd.item;
 
-import Comet_Blaze.neo.cbadd.client.screen.BindKeyScreen;
+import Comet_Blaze.neo.cbadd.client.ClientOnlyHandler;
 import Comet_Blaze.neo.cbadd.entity.ConnectorTileEntity;
 import Comet_Blaze.neo.cbadd.entity.KeyTriggerBlockEntity;
 import Comet_Blaze.neo.cbadd.network.BindKeyPacket;
@@ -54,7 +54,7 @@ public class KeyTriggerBlockItem extends BlockItem {
                     PacketDistributor.sendToServer(new BindKeyPacket(context.getHand(), pos, "CLEAR_ALL"));
                     return InteractionResult.SUCCESS;
                 } else {
-                    Minecraft.getInstance().setScreen(new BindKeyScreen(context.getHand(), pos));
+                    ClientOnlyHandler.openBindKeyScreen(context.getHand(), pos);
                     return InteractionResult.SUCCESS;
                 }
             }
